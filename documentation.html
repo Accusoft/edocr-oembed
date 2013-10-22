@@ -1,0 +1,61 @@
+<h3>oEmbed Support for edocr documents </h3>
+
+<ul>
+  <li><b>- Request type :</b> HTTP GET</li>
+  <li><b>- Authorization :</b> none</li>
+  <li><b>- URL :</b> http://www.edocr.com/api/oembed</li>
+  <li><b>- Default response format :</b> json</li>
+</ul>
+
+<h3>Quick example call</h3>
+- <a href="http://www.edocr.com/api/oembed/?format=json&url=http://www.edocr.com/doc/1465/6-steps-acquire-new-customers-edocr-com">http://www.edocr.com/api/oembed/?format=json&url=http://www.edocr.com/doc/1465/6-steps-acquire-new-customers-edocr-com</a>
+
+<h3>Query Parameters</h3>
+<ul>
+  <li><b>- url (Required) :</b> The URL to retrieve embedding information for</li>
+  <li><b>- format (optional) :</b> xml, json</li>
+</ul>
+
+<h3>Response parameters</h3>
+
+<ul>
+  <li><b>- version :</b> The oEmbed version number.</li>
+  <li><b>- type :</b> Type of oEmbed response.</li>
+  <li><b>- title :</b> Title of the embed document.</li>
+  <li><b>- author_name :</b> Author of the embed document.</li>
+  <li><b>- author_url :</b> edocr profile page of the author of embed document.</li>
+  <li><b>- provider_name :</b> Provider of the embed content, edocr.</li>
+  <li><b>- provider_url :</b> URL of provider.</li>
+  <li><b>- html :</b> This is the html embed code, which contains links to embed document.</li>
+  <li><b>- width :</b> Width of the embed document.</li>
+  <li><b>- height :</b> Height of the embed document.</li>
+</ul>
+
+<h3>Error Codes</h3>
+
+<ul>
+  <li><b>- 404 Not Found :</b> If URL is missing or doesn't point to an embeddable resource.</li>
+  <li><b>- 501 Not Implemented :</b> If the format provided is not supported. Should be one of xml, json</li>
+</ul>
+
+<h3>Example</h3>
+<h4>XML Request</h4>
+
+<p>- <a>http://www.edocr.com/api/oembed/?format=xml&url=http://www.edocr.com/doc/1465/6-steps-acquire-new-customers-edocr-com</a></p>
+<h4>JSON Request</h4>
+
+<p>- <a>http://www.edocr.com/api/oembed/?format=json&url=http://www.edocr.com/doc/1465/6-steps-acquire-new-customers-edocr-com</a></p>
+
+<h3>Example JSON Response</h3>
+<p>{</p>
+<p>"version":"1.0",</p>
+<p>"type":"rich",</p>
+<p>"height":872,</p>
+<p>"width":658,</p>
+<p>"title":"6 steps to acquire new customers via edocr.com",</p>
+<p>"provider_name":"edocr",</p>
+<p>"provider_url":"http:\/\/edocr.com\/",</p>
+<p>"author_name":"edocr",</p>
+<p>"author_url":"http:\/\/www.edocr.com\/user\/edocr",</p>
+<p>"html":"&lt;iframe webkitAllowFullScreen mozallowfullscreen allowFullScreen width=\"658\" height=\"872\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" src=\"http:\/\/www.edocr.com\/embed\/?keyval=dfe854cf3f6e88145b8378a60b2d47735382ec7f\"&gt;&lt;\/iframe&gt;"</p>
+<p>}</p>
